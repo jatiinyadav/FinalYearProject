@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chronic Kidney Disease Model</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+</head>
+
+<body>
+    <br>
+    <div style="color:black;" class="container">
+        <h1 class="h1">Chronic Kidney Disease Prediction</h1>
+    </div>
+    <br>
+
+    
+    <div>
+        <h1>Hello World</h1>
+    </div>  
+
+    <form action="{{ url_for('predict') }}" method="POST" class="container">
+
+        <div></div>
+
+        
+        <div class="form-group row">
+            <div class="form-group col-md-6">
+                <label style="text-align: left;" for="inputEmail4">Specific Gravity <span style="color: red;"> *</span>
+                </label>
+                <input name="sg" class="form-control" placeholder="Ex:(1.005,1.010,1.015,1.020,1.025)"
+                    required="required">
+            </div>
+            <div class="form-group col-md-6">
+                <label style="text-align: left;" for="inputPassword4">Hyper Tension <span style="color: red;"> *</span>
+                </label>
+                <input class="form-control" name="htn" placeholder="Yes = 1, No=0" required="required">
+            </div>
+            <div class="form-group col-md-6">
+                <label style="text-align: left;" for="inputEmail4">Haemoglobin <span style="color: red;"> *</span>
+                </label>
+                <input name="hemo" class="form-control" placeholder="in gms" required="required">
+            </div>
+            <div class="form-group col-md-6">
+                <label style="text-align: left;" for="inputPassword4">Diabetes Mellitus<span style="color: red;">
+                        *</span> </label>
+                <input class="form-control" name="dm" placeholder="Yes = 1, No=0" required="required">
+            </div>
+            <div class="form-group col-md-6">
+                <label style="text-align: left;" for="inputPassword4">Albumin<span style="color: red;"> *</span>
+                </label>
+                <input class="form-control" name="al" placeholder="(0,1,2,3,4,5)" required="required">
+            </div>
+            <div class="form-group col-md-6">
+                <label style="text-align: left;" for="inputPassword4">Appetite<span style="color: red;"> *</span>
+                </label>
+                <input class="form-control" name="appet" placeholder="Good = 1, Poor = 0" required="required">
+            </div>
+            <div class="form-group col-md-6">
+                <label style="text-align: left;" for="inputPassword4">Red Blood Cell Count<span style="color: red;">
+                        *</span> </label>
+                <input class="form-control" name="rc" placeholder="in Millions/cmm" required="required">
+            </div>
+            <div class="form-group col-md-6">
+                <label style="text-align: left;" for="inputPassword4">Pus Cell<span style="color: red;"> *</span>
+                </label>
+                <input class="form-control" name="pc" placeholder="Normal = 0, Abnormal = 1" required="required">
+            </div>
+        </div>
+        <br>
+        <button id="sub" class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+    <div style="color:black;" class="ml-container">
+        <form>
+            <br>
+            <br>
+            <p class='footer-description'>©2023 Utkarsh Mall, Utkarsh Sharma & Jatin Yadav</p>
+
+        </form>
+    </div>
+
+    <style>
+        /* Background Image */
+        body {
+            height: 100%;   
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+
+        }
+
+        /* Color */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            text-align: left;
+        }
+
+        /* Heading Font */
+        .container-heading {
+            margin: 0;
+        }
+
+        .heading_font {
+            color: black;
+            font-family: 'Pacifico', cursive;
+            font-size: 50px;
+            font-weight: normal;
+        }
+
+        .labels {
+            text-align: left;
+        }
+
+        /* Box */
+        #first {
+            border-radius: 14px;
+            height: 30px;
+            width: 300px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            width: 160px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            width: 120px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            width: 160px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #fifth {
+            border-radius: 14px;
+            height: 25px;
+            width: 130px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #sixth {
+            border-radius: 14px;
+            height: 25px;
+            width: 200px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #seventh {
+            border-radius: 14px;
+            height: 25px;
+            width: 180px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #eight {
+            border-radius: 14px;
+            height: 25px;
+            width: 260px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+
+        /* Submit Button */
+        #sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+    </style>
+
+
+</body>
+
+</html>
