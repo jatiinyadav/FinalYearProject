@@ -17,13 +17,13 @@
 
             <!-- Result -->
             <div style="color:black;" class="results">
-                {% if prediction==1 %}
+                {% if prediction == 1 %}
                 <h1><span class='danger'>Oops! 🙁<br><br>You have CHRONIC KIDNEY DISEASE.<br><br>Please Consult
                         Doctor.</span></h1>
                 <br><br><br><br><br><br>
                 <img class="gif" src="{{ url_for('static', filename='no.gif')}}" alt="STROKE Image">
                 {% elif prediction==0 %}
-                <h1><span class='safe'>🎉 Congratulation! 🎉<br><br>You DON'T have Chronic Kidney Disease.</span></h1>
+                <h1><span class='safe'>🎉 Congratulations! 🎉<br><br>You DON'T have Chronic Kidney Disease.</span></h1>
                 <img class="gif1" src="{{ url_for('static', filename='yes2.webp')}}" alt="Not STROKE Image">
                 {% endif %}
             </div>
