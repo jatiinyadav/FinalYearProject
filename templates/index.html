@@ -17,18 +17,6 @@
 
 
     <div class="area">
-        <ul class="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
 
 
         <br><br>
@@ -38,7 +26,6 @@
         <br><br><br><br>
         <div class="mainData">
 
-            <div style="flex: 1">
                 <form action="{{ url_for('predict') }}" method="POST" class="container">
 
                     <div class="form-group row">
@@ -107,9 +94,8 @@
                     <br>
                     <button id="sub" class="btn btn-primary" type="submit">Submit</button>
                 </form>
-            </div>
 
-            <!-- <div style="flex: 1">
+s                <!-- <div style="flex: 1">
             <img src="{{ url_for('static', filename='images/Kidney.png')}}" alt="">
         </div> -->
         </div>
@@ -125,6 +111,20 @@
 
             </form>
         </div>
+
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
 
     </div>
 
