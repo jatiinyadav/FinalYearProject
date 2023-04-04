@@ -6,132 +6,157 @@
     <title>Chronic Kidney Disease Model</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
 </head>
 
 <body>
-    <br>
-    <div style="color:black;" class="container">
-        <h1 class="h1">Chronic Kidney Disease Prediction</h1>
-    </div>
-    <!-- <br><br><br><br> -->
-    <div class="mainData">
 
-        <div style="flex: 1">
-            <form action="{{ url_for('predict') }}" method="POST" class="container">
 
-                <div class="form-group row">
-                    <div class="form-group col-md-6">
-                        <label style="text-align: left;" for="inputEmail4">Specific Gravity <span style="color: red;"> *</span>
-                        </label>
-                        <input name="sg" class="form-control" placeholder="Ex:(1.005,1.010,1.015,1.020,1.025)"
-                            required="required">
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+
+        <br><br>
+        <div style="color:black;" class="container">
+            <h2><span class="heading_font">Chronic Kidney Disease Prediction</span></h1>
+        </div>
+        <br><br><br><br>
+        <div class="mainData">
+
+            <div style="flex: 1">
+                <form action="{{ url_for('predict') }}" method="POST" class="container">
+
+                    <div class="form-group row">
+                        <div class="form-group col-md-6">
+                            <label style="text-align: left;" for="inputEmail4">Specific Gravity <span
+                                    style="color: red;">
+                                    *</span>
+                            </label>
+                            <input name="sg" class="form-control" placeholder="Ex:(1.005,1.010,1.015,1.020,1.025)"
+                                required="required">
+                        </div>
+                        <br><br><br><br>
+                        <div class="form-group col-md-6">
+                            <label style="text-align: left;" for="inputPassword4">Hyper Tension <span
+                                    style="color: red;">
+                                    *</span>
+                            </label>
+                            <input class="form-control" name="htn" placeholder="Yes = 1, No=0" required="required">
+                        </div>
+                        <br><br><br><br>
+                        <div class="form-group col-md-6">
+                            <label style="text-align: left;" for="inputEmail4">Haemoglobin <span style="color: red;">
+                                    *</span>
+                            </label>
+                            <input name="hemo" class="form-control" placeholder="in gms" required="required">
+                        </div>
+                        <br><br><br><br>
+                        <div class="form-group col-md-6">
+                            <label style="text-align: left;" for="inputPassword4">Diabetes Mellitus<span
+                                    style="color: red;">
+                                    *</span> </label>
+                            <input class="form-control" name="dm" placeholder="Yes = 1, No=0" required="required">
+                        </div>
+                        <br><br><br><br>
+                        <div class="form-group col-md-6">
+                            <label style="text-align: left;" for="inputPassword4">Albumin<span style="color: red;">
+                                    *</span>
+                            </label>
+                            <input class="form-control" name="al" placeholder="(0,1,2,3,4,5)" required="required">
+                        </div>
+                        <br><br><br><br>
+                        <div class="form-group col-md-6">
+                            <label style="text-align: left;" for="inputPassword4">Appetite<span style="color: red;">
+                                    *</span>
+                            </label>
+                            <input class="form-control" name="appet" placeholder="Good = 1, Poor = 0"
+                                required="required">
+                        </div>
+                        <br><br><br><br>
+                        <div class="form-group col-md-6">
+                            <label style="text-align: left;" for="inputPassword4">Red Blood Cell Count<span
+                                    style="color: red;">
+                                    *</span> </label>
+                            <input class="form-control" name="rc" placeholder="in Millions/cmm" required="required">
+                        </div>
+                        <br><br><br><br>
+                        <div class="form-group col-md-6">
+                            <label style="text-align: left;" for="inputPassword4">Pus Cell<span style="color: red;">
+                                    *</span>
+                            </label>
+                            <input class="form-control" name="pc" placeholder="Normal = 0, Abnormal = 1"
+                                required="required">
+                        </div>
+                        <br><br><br><br>
                     </div>
-                    <br><br><br><br>
-                    <div class="form-group col-md-6">
-                        <label style="text-align: left;" for="inputPassword4">Hyper Tension <span style="color: red;"> *</span>
-                        </label>
-                        <input class="form-control" name="htn" placeholder="Yes = 1, No=0" required="required">
-                    </div>
-                    <br><br><br><br>
-                    <div class="form-group col-md-6">
-                        <label style="text-align: left;" for="inputEmail4">Haemoglobin <span style="color: red;"> *</span>
-                        </label>
-                        <input name="hemo" class="form-control" placeholder="in gms" required="required">
-                    </div>
-                    <br><br><br><br>
-                    <div class="form-group col-md-6">
-                        <label style="text-align: left;" for="inputPassword4">Diabetes Mellitus<span style="color: red;">
-                                *</span> </label>
-                        <input class="form-control" name="dm" placeholder="Yes = 1, No=0" required="required">
-                    </div>
-                    <br><br><br><br>
-                    <div class="form-group col-md-6">
-                        <label style="text-align: left;" for="inputPassword4">Albumin<span style="color: red;"> *</span>
-                        </label>
-                        <input class="form-control" name="al" placeholder="(0,1,2,3,4,5)" required="required">
-                    </div>
-                    <br><br><br><br>
-                    <div class="form-group col-md-6">
-                        <label style="text-align: left;" for="inputPassword4">Appetite<span style="color: red;"> *</span>
-                        </label>
-                        <input class="form-control" name="appet" placeholder="Good = 1, Poor = 0" required="required">
-                    </div>
-                    <br><br><br><br>
-                    <div class="form-group col-md-6">
-                        <label style="text-align: left;" for="inputPassword4">Red Blood Cell Count<span style="color: red;">
-                                *</span> </label>
-                        <input class="form-control" name="rc" placeholder="in Millions/cmm" required="required">
-                    </div>
-                    <br><br><br><br>
-                    <div class="form-group col-md-6">
-                        <label style="text-align: left;" for="inputPassword4">Pus Cell<span style="color: red;"> *</span>
-                        </label>
-                        <input class="form-control" name="pc" placeholder="Normal = 0, Abnormal = 1" required="required">
-                    </div>
-                    <br><br><br><br>
-                </div>
+                    <br>
+                    <button id="sub" class="btn btn-primary" type="submit">Submit</button>
+                </form>
+            </div>
+
+            <!-- <div style="flex: 1">
+            <img src="{{ url_for('static', filename='images/Kidney.png')}}" alt="">
+        </div> -->
+        </div>
+
+
+
+
+        <div style="color:black;" class="ml-container">
+            <form>
                 <br>
-                <button id="sub" class="btn btn-primary" type="submit">Submit</button>
+                <br>
+                <p class='footer-description'>©2023 Utkarsh Mall, Utkarsh Sharma & Jatin Yadav</p>
+
             </form>
         </div>
 
-        <div style="flex: 1">
-            <img src="https://raw.githubusercontent.com/jatiinyadav/FinalYearProject/master/Kidney.png"
-                alt="">
-        </div>
     </div>
 
 
-
-
-    <div style="color:black;" class="ml-container">
-        <form>
-            <br>
-            <br>
-            <p class='footer-description'>©2023 Utkarsh Mall, Utkarsh Sharma & Jatin Yadav</p>
-
-        </form>
-    </div>
-
-    <style>
+    <!-- <style>
         /* Background Image */
         body {
-            height: 100%;
-            background-position: center;
+            background-image: url('https://raw.githubusercontent.com/jatiinyadav/FinalYearProject/master/images/intro-bg-light.webp');
             background-repeat: no-repeat;
-            background-size: 100% 100%;
-
         }
 
-        .mainData{
+        .mainData {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        img{
+        img {
             height: 30rem;
             width: 45rem;
         }
 
-        .myImage {
-            height: 100%;
-            background-image: url('https://raw.githubusercontent.com/jatiinyadav/FinalYearProject/master/Kidney.png?token=GHSAT0AAAAAAB56ZBKCMLMPDJUBMZ6XVRPSZBKMS5A');
+        h1,
+        p {
+            text-align: center;
+        }
 
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
+        .container {
+            margin: 0 auto;
         }
 
         /* Color */
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-        }
 
         form label {
             text-align: left;
@@ -227,7 +252,7 @@
             border-radius: 14px;
             font-size: 18px;
         }
-    </style>
+    </style> -->
 
 
 </body>
