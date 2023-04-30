@@ -29,10 +29,11 @@
       text-align: center;
   }
 
-    .mainData{
-        position: relative;
-        z-index: 1;
-    }
+  .mainData {
+    margin-top: -2rem;
+      position: relative;
+      z-index: 1;
+  }
 
   /* Heading Font */
   .container-heading {

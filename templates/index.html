@@ -20,82 +20,134 @@
 
 
         <br><br>
-        <div style="color:black;" class="container">
-            <h2><span class="heading_font">Chronic Kidney Disease Prediction</span></h1>
+        <div class="container">
+            <h2><span class="heading_font" style="color: white;">Chronic Kidney Disease Prediction</span></h1>
         </div>
         <br><br><br><br>
         <div class="mainData">
 
-                <form action="{{ url_for('predict') }}" method="POST" class="container">
+            <form action="{{ url_for('predict') }}" method="POST" class="container">
 
-                    <div class="form-group row">
-                        <div class="form-group col-md-6">
-                            <label style="text-align: left;" for="inputEmail4">Specific Gravity <span
-                                    style="color: red;">
+                <div style="display: flex; justify-content: space-between; align-items: center; gap: 1rem">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" style="height: 13rem; width: 12rem; margin: 0 auto;"
+                            src="https://www.merckmanuals.com/Content/Images/Redesign/labtest/icon_labtest-red.png"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <label for="inputEmail4">Specific Gravity <span style="color: red;">
                                     *</span>
                             </label>
-                            <input name="sg" class="form-control" placeholder="Ex:(1.005,1.010,1.015,1.020,1.025)"
-                                required="required">
+                            <p class="card-text"><input name="sg" class="form-control"
+                                    placeholder="Ex:(1.005,1.010,1.015,1.020)" required="required"></p>
                         </div>
-                        <br><br><br><br>
-                        <div class="form-group col-md-6">
-                            <label style="text-align: left;" for="inputPassword4">Hyper Tension <span
-                                    style="color: red;">
-                                    *</span>
-                            </label>
-                            <input class="form-control" name="htn" placeholder="Yes = 1, No=0" required="required">
-                        </div>
-                        <br><br><br><br>
-                        <div class="form-group col-md-6">
-                            <label style="text-align: left;" for="inputEmail4">Haemoglobin <span style="color: red;">
-                                    *</span>
-                            </label>
-                            <input name="hemo" class="form-control" placeholder="in gms" required="required">
-                        </div>
-                        <br><br><br><br>
-                        <div class="form-group col-md-6">
-                            <label style="text-align: left;" for="inputPassword4">Diabetes Mellitus<span
-                                    style="color: red;">
-                                    *</span> </label>
-                            <input class="form-control" name="dm" placeholder="Yes = 1, No=0" required="required">
-                        </div>
-                        <br><br><br><br>
-                        <div class="form-group col-md-6">
-                            <label style="text-align: left;" for="inputPassword4">Albumin<span style="color: red;">
-                                    *</span>
-                            </label>
-                            <input class="form-control" name="al" placeholder="(0,1,2,3,4,5)" required="required">
-                        </div>
-                        <br><br><br><br>
-                        <div class="form-group col-md-6">
-                            <label style="text-align: left;" for="inputPassword4">Appetite<span style="color: red;">
-                                    *</span>
-                            </label>
-                            <input class="form-control" name="appet" placeholder="Good = 1, Poor = 0"
-                                required="required">
-                        </div>
-                        <br><br><br><br>
-                        <div class="form-group col-md-6">
-                            <label style="text-align: left;" for="inputPassword4">Red Blood Cell Count<span
-                                    style="color: red;">
-                                    *</span> </label>
-                            <input class="form-control" name="rc" placeholder="in Millions/cmm" required="required">
-                        </div>
-                        <br><br><br><br>
-                        <div class="form-group col-md-6">
-                            <label style="text-align: left;" for="inputPassword4">Pus Cell<span style="color: red;">
-                                    *</span>
-                            </label>
-                            <input class="form-control" name="pc" placeholder="Normal = 0, Abnormal = 1"
-                                required="required">
-                        </div>
-                        <br><br><br><br>
                     </div>
-                    <br>
-                    <button id="sub" class="btn btn-primary" type="submit">Submit</button>
-                </form>
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" style="height: 13rem; width: 12rem; margin: 0 auto;"
+                            src="https://media.istockphoto.com/id/1165507074/vector/blood-pressure-icon.jpg?s=612x612&w=0&k=20&c=bCGG_8rTwK4uDhGKjKVObuG1e1J9zHPGJcPjXWKHs3k="
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <label for="inputPassword4">Hyper Tension <span style="color: red;">
+                                    *</span>
+                            </label>
+                            </label>
+                            <p class="card-text"><input class="form-control" name="htn" placeholder="Yes = 1, No=0"
+                                    required="required"></p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" style="height: 13rem; width: 12rem; margin: 0 auto; padding: 1rem 0;"
+                            src="https://cdn-icons-png.flaticon.com/512/5912/5912067.png"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <label for="inputEmail4">Haemoglobin <span style="color: red;">
+                                    *</span>
+                            </label>
+                            <p class="card-text"><input name="hemo" class="form-control" placeholder="in gms"
+                                    required="required"></p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" style="height: 13rem; width: 12rem; margin: 0 auto; padding: 1rem 0"
+                            src="https://cdn-icons-png.flaticon.com/512/3063/3063193.png"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <label for="inputPassword4">Diabetes Mellitus<span style="color: red;">
+                                    *</span> </label>
+                            <p class="card-text"><input class="form-control" name="dm" placeholder="Yes = 1, No=0"
+                                    required="required"></p>
+                        </div>
+                    </div>
+                </div>
 
-s                <!-- <div style="flex: 1">
+                <br><br>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" style="height: 13rem; width: 12rem; margin: 0 auto; padding: 1rem 0"
+                            src="https://www.arogga.com/_next/static/media/common.4ef1bb2c.png"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <label for="inputPassword4">Albumin<span style="color: red;">
+                                    *</span>
+                            </label>
+                            <p class="card-text"><input class="form-control" name="al" placeholder="(0,1,2,3,4,5)"
+                                    required="required"></p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" style="height: 13rem; width: 12rem; margin: 0 auto; padding: 1rem 0"
+                            src="https://cdn-icons-png.flaticon.com/512/3782/3782014.png"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <label for="inputPassword4">Appetite<span
+                                    style="color: red;">
+                                    *</span>
+                            </label>
+                            <p class="card-text"> <input class="form-control" name="appet"
+                                    placeholder="Good = 1, Poor = 0" required="required">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" style="height: 13rem; width: 12rem; margin: 0 auto; padding: 1rem 0"
+                            src="https://cdn0.iconfinder.com/data/icons/health-checkups-1/64/Red-blood-cell-count-checkup-health-512.png"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <label for="inputPassword4">Red Blood Cell
+                                Count<span style="color: red;">
+                                    *</span> </label>
+                            <p class="card-text"> <input class="form-control" name="rc" placeholder="in Millions/cmm"
+                                    required="required">
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" style="height: 13rem; width: 12rem; margin: 0 auto;"
+                            src="https://cdn-icons-png.flaticon.com/512/212/212206.png"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <label for="inputPassword4">Pus Cell<span
+                                    style="color: red;">
+                                    *</span>
+                            </label>
+                            <p class="card-text"> <input class="form-control" name="pc"
+                                    placeholder="Normal = 0, Abnormal = 1" required="required">
+
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div style="width: 100%; text-align: center;">
+                    <button id="sub" class="btn btn-success" style="padding: 1rem 10rem;" type="submit">Submit</button>
+                </div>
+            </form>
+
+             <!-- <div style="flex: 1">
             <img src="{{ url_for('static', filename='images/Kidney.png')}}" alt="">
         </div> -->
         </div>
@@ -103,7 +155,7 @@ s                <!-- <div style="flex: 1">
 
 
 
-        <div style="color:black;" class="ml-container">
+        <div style="color:white;" class="ml-container">
             <form>
                 <br>
                 <br>
